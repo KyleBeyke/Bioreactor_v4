@@ -382,7 +382,7 @@ To contribute improvements:
 ## License
 
 This CircuitPython port maintains compatibility with the original RBDDimmer library API.
-Released under GLPv3 License.
+Released under MIT License.
 
 ## Version History
 

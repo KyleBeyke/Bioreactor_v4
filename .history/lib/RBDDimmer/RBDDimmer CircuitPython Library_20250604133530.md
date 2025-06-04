@@ -382,7 +382,7 @@ To contribute improvements:
 ## License
 
 This CircuitPython port maintains compatibility with the original RBDDimmer library API.
-Released under GLPv3 License.
+Released under MIT License.
 
 ## Version History
 
@@ -395,5 +395,5 @@ Released under GLPv3 License.
 ## Credits
 
 - Original Arduino library: RobotDyn
-- CircuitPython port: Kyle Beyke
+- CircuitPython port: [Your name]
 - Zero-crossing detection algorithm adapted from RBDDimmer
