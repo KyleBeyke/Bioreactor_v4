@@ -183,12 +183,19 @@ class SimpleBiodigester:
 
         max_power = self.current_profile['max_power']
 
+        # Do not heat if we're already at or above the target temperature
+        # Negative temperature error means the current temperature is higher
+        # than the target and heating would push the system even further
+        # out of range.
+        if temp_error <= 0:
+            return 0
+
         # Very conservative power calculation for biological systems
-        if abs(temp_error) <= 0.5:
+        if temp_error <= 0.5:
             return 5  # Minimal maintenance heating
-        elif abs(temp_error) <= 2.0:
+        elif temp_error <= 2.0:
             return min(15, max_power)  # Gentle heating
-        elif abs(temp_error) <= 5.0:
+        elif temp_error <= 5.0:
             return min(25, max_power)  # Moderate heating
         else:
             return min(35, max_power)  # Maximum safe heating
